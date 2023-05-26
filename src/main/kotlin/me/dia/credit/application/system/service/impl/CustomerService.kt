@@ -10,6 +10,7 @@ import java.lang.RuntimeException
 class CustomerService(
     private val customerRepository: CustomerRepository
 ): ICustomerService {
+
     override fun saveCustomer(customer: Customer): Customer = this.customerRepository.save(customer)
 
     override fun findById(id: Long): Customer = this.customerRepository.findById(id).orElseThrow {
